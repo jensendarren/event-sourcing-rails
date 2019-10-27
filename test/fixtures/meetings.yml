@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entity_id: 
+  time: 2019-10-27 02:53:28
+  organizer_id: 1
+
+two:
+  entity_id: 
+  time: 2019-10-27 02:53:28
+  organizer_id: 1
