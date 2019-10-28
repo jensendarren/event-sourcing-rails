@@ -2,14 +2,13 @@ module Commands
   module Meeting
     ScheduleSchema = Dry::Schema.Params do
       required(:time).value(gt?: Time.now + 5.minutes)
-      required(:organizer_id).filled
+      required(:organizer_id).filled(:int?)
       required(:invitee_ids).filled { each(:int?) }
     end
 
     class Schedule < Command
       def call
-        # TODO: validate!
-        # return validate if validate.failure?
+        return validate if validate.failure?
 
         event = publish_event(
           event_type: 'scheduled',

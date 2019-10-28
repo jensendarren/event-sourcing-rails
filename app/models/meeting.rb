@@ -3,6 +3,7 @@ class Meeting < ApplicationRecord
   has_many :invitees
 
   class << self
+    # TODO Use wisper to subscribe to Event create_and_broadcast events to run this handler
     def scheduled_handler(event)
       params = event.data.symbolize_keys
       create!(

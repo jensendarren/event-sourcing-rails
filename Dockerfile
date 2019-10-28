@@ -19,6 +19,7 @@ COPY Gemfile Gemfile.lock package.json ./
 RUN gem install bundler
 RUN bundle install --verbose --jobs 20 --retry 5
 RUN npm install -g yarn
+RUN yarn install --check-files
 
 # Copy the main application.
 COPY . ./
